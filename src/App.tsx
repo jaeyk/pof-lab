@@ -371,7 +371,7 @@ export default function App() {
                   href="https://forms.gle/hMjJGYKHZkuRD3dKA"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-[var(--ink)] px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5"
+                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-[var(--ink)] px-7 py-4 text-lg font-bold text-white transition-transform hover:-translate-y-0.5"
                 >
                   Apply to be a Research Assistant
                   <ArrowIcon />
@@ -409,7 +409,7 @@ export default function App() {
                 </p>
                 <a
                   href="mailto:jaekim@unc.edu"
-                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[var(--ink)] transition-transform hover:-translate-y-0.5"
+                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-lg font-bold text-[var(--ink)] transition-transform hover:-translate-y-0.5"
                 >
                   Email the lab
                   <ArrowIcon />
