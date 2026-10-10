@@ -256,10 +256,7 @@ export default function App() {
                     part of the social safety net.
                   </p>
                   <p className="leading-relaxed text-[var(--ink)]">
-                    This project seeks to understand the vital but varied roles
-                    public universities play in supporting low-income students,
-                    from operating basic-needs centers to providing food
-                    pantries.
+                    This project seeks to understand the vital but varied roles public universities play in addressing food insecurity among low-income students, from operating basic needs centers to providing food pantries.
                   </p>
                 </div>
               </article>
