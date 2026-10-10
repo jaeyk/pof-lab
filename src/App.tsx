@@ -1,7 +1,7 @@
 import serenaPhoto from "../images/serena-web.jpg";
 
 const campusImage =
-  "https://images.unsplash.com/photo-1779113632457-7d798e5c8778?auto=format&fit=crop&w=1800&q=85";
+  "https://images.unsplash.com/photo-1745328597392-8b6a8f673e46?auto=format&fit=crop&w=1800&q=85";
 
 function ArrowIcon() {
   return (
@@ -149,15 +149,15 @@ export default function App() {
             <div className="relative h-[38vh] min-h-72 overflow-hidden rounded-t-[2rem] md:h-[50vh]">
               <img
                 src={campusImage}
-                alt="An audience watches musicians perform in a brightly lit room"
-                className="h-full w-full object-cover"
+                alt="An orchestra rehearses under the direction of a conductor"
+                className="h-full w-full object-cover object-[70%_10%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(12,33,46,0.48)] via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 rounded-full bg-[var(--paper)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] md:bottom-8 md:left-8">
                 Policy, designed with people
               </div>
               <div className="absolute bottom-6 right-6 hidden text-right text-xs leading-relaxed text-white md:block">
-                Photo by Pierre Goiffon
+                Photo by Kazuo ota
                 <br />
                 via Unsplash
               </div>
