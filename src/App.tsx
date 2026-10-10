@@ -384,6 +384,40 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        <section id="support" className="scroll-mt-8 bg-[var(--ink)] text-white">
+          <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-16">
+            <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
+              <div>
+                <Eyebrow onDark>Support the lab</Eyebrow>
+              </div>
+
+              <div>
+                <h2 className="max-w-4xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
+                  Support the lab
+                </h2>
+                <p className="mt-8 max-w-3xl text-xl leading-relaxed">
+                  If you would like to support the lab’s mission, or if you
+                  see an opportunity to collaborate, please email{" "}
+                  <a
+                    href="mailto:jaekim@unc.edu"
+                    className="font-bold text-[var(--sky)] underline underline-offset-4"
+                  >
+                    jaekim@unc.edu
+                  </a>
+                  .
+                </p>
+                <a
+                  href="mailto:jaekim@unc.edu"
+                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[var(--ink)] transition-transform hover:-translate-y-0.5"
+                >
+                  Email the lab
+                  <ArrowIcon />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="bg-[var(--sun)]">
