@@ -289,7 +289,7 @@ export default function App() {
                   </h2>
                   <p className="mt-4 max-w-xl leading-relaxed text-white">
                     Assistant Professor of Public Policy at the University of
-                    North Carolina at Chapel Hill.
+                    North Carolina at Chapel Hill. Previously, Senior Data Scientist at Code for America.
                   </p>
                 </div>
                 <a
