@@ -252,8 +252,8 @@ export default function App() {
                 </h2>
                 <div className="mt-10 grid gap-8 border-t border-[var(--line)] pt-8 md:grid-cols-2">
                   <p className="text-xl leading-relaxed">
-                    Public universities do far more than educate. They are
-                    often a critical but hidden part of the social safety net.
+                    Public universities are a critical but often overlooked
+                    part of the social safety net.
                   </p>
                   <p className="leading-relaxed text-[var(--ink)]">
                     This project seeks to understand the vital but varied roles
