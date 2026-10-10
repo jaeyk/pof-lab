@@ -1,3 +1,5 @@
+import serenaPhoto from "../images/serena-web.jpg";
+
 const campusImage =
   "https://images.unsplash.com/photo-1779113632457-7d798e5c8778?auto=format&fit=crop&w=1800&q=85";
 
@@ -89,7 +91,7 @@ export default function App() {
           </a>
 
           <nav
-            className="hidden items-center gap-8 text-sm font-medium md:flex"
+            className="flex items-center gap-3 text-base font-bold text-black min-[360px]:gap-4 sm:gap-8 sm:text-lg md:gap-10 md:text-xl"
             aria-label="Primary navigation"
           >
             <a className="nav-link" href="#mission">
@@ -105,7 +107,7 @@ export default function App() {
 
           <a
             href="#work"
-            className="group flex items-center gap-2 rounded-full border border-[var(--ink)] px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-[var(--ink)] hover:text-white"
+            className="group hidden items-center gap-2 rounded-full border border-[var(--ink)] px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-[var(--ink)] hover:text-white md:flex"
           >
             Explore our work
             <ArrowIcon />
@@ -115,10 +117,9 @@ export default function App() {
 
       <main id="top">
         <section className="relative">
-          <div className="pointer-events-none absolute right-[-9rem] top-[-8rem] size-[28rem] rounded-full border border-[var(--line)] md:size-[40rem]" />
           <div className="mx-auto grid max-w-[1440px] items-end gap-10 px-5 pb-10 pt-10 md:px-10 md:pb-14 md:pt-14 lg:grid-cols-[1.18fr_0.82fr] lg:px-16 lg:pt-16">
             <div className="relative z-10">
-              <h1 className="max-w-5xl font-display text-[clamp(4rem,9vw,9.5rem)] leading-[0.78] tracking-[-0.06em]">
+              <h1 className="max-w-5xl font-display text-[clamp(2.5rem,13vw,4rem)] leading-[0.82] tracking-[-0.06em] md:text-[clamp(4rem,9vw,9.5rem)] md:leading-[0.78]">
                 People.
                 <br />
                 Organizations.
@@ -128,7 +129,7 @@ export default function App() {
             </div>
 
             <div className="relative z-10 lg:pb-3">
-              <p className="max-w-xl text-xl leading-relaxed text-[var(--ink)] md:text-2xl">
+              <p className="max-w-xl text-lg leading-relaxed text-[var(--ink)] sm:text-xl md:text-2xl">
                 A research lab advancing{" "}
                 <strong className="font-bold text-[var(--blue)]">people-centered</strong> government through{" "}
                 <strong className="font-bold text-[var(--blue)]">design</strong>, <strong className="font-bold text-[var(--blue)]">data</strong>, and{" "}
@@ -312,17 +313,35 @@ export default function App() {
                   {
                     name: "Serena Michael Ray",
                     field: "Public Policy undergraduate",
+                    photo: serenaPhoto,
                   },
                   {
                     name: "Juliet Rose Loffredo",
                     field: "Journalism and Public Policy undergraduate",
+                    photo: undefined,
                   },
                 ].map((person) => (
                   <article
                     key={person.name}
                     className="grid gap-4 border-b border-[var(--line)] py-8 md:grid-cols-2 md:items-center"
                   >
-                    <h3 className="font-display text-3xl">{person.name}</h3>
+                    <div className="flex items-center gap-5">
+                      {person.photo ? (
+                        <img
+                          src={person.photo}
+                          alt={person.name}
+                          className="size-24 shrink-0 rounded-full object-cover object-top grayscale transition duration-700 hover:grayscale-0"
+                        />
+                      ) : (
+                        <div
+                          aria-hidden="true"
+                          className="flex size-24 shrink-0 items-center justify-center rounded-full bg-[var(--sky)] font-display text-3xl"
+                        >
+                          {person.name[0]}
+                        </div>
+                      )}
+                      <h3 className="font-display text-3xl">{person.name}</h3>
+                    </div>
                     <p className="text-base leading-relaxed text-[var(--ink)] md:text-right">
                       Research Assistant · {person.field}
                       <br />
