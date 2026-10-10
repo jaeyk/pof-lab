@@ -243,7 +243,7 @@ export default function App() {
               </div>
               <article>
                 <p className="font-mono text-base text-[var(--ink)]">
-                  Research / Higher Education
+                  Research / Safety Net Programs &amp; Higher Education
                 </p>
                 <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
                   Higher Education as{" "}

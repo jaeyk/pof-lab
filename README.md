@@ -14,6 +14,12 @@ npx pnpm@10.34.3 run build:pages    # build the site into docs/
 The built site lives in `docs/`, which GitHub Pages can serve directly
 (Settings → Pages → Deploy from a branch → `main` / `docs`).
 
+To rebuild, commit, and push in one step:
+
+```sh
+./update_site.sh "what changed"
+```
+
 ## Editing
 
 - Page content and layout: `src/App.tsx`
