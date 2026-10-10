@@ -156,10 +156,8 @@ export default function App() {
               <div className="absolute bottom-5 left-5 rounded-full bg-[var(--paper)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] md:bottom-8 md:left-8">
                 Policy, designed with people
               </div>
-              <div className="absolute bottom-6 right-6 hidden text-right text-xs leading-relaxed text-white md:block">
-                Photo by Kazuo ota
-                <br />
-                via Unsplash
+              <div className="absolute left-5 top-5 rounded-full bg-black/70 px-3 py-1.5 text-xs font-medium text-white md:bottom-8 md:left-auto md:right-8 md:top-auto">
+                Photo by Kazuo ota via Unsplash
               </div>
             </div>
           </div>
@@ -382,7 +380,7 @@ export default function App() {
                 </p>
 
                 <p className="mt-8 max-w-3xl border-l-4 border-[var(--ink)] py-1 pl-5 text-lg font-semibold leading-relaxed">
-                  Please note: If your primary goal is to quickly add another
+                  Note: If your primary goal is to quickly add another
                   line to your resume, this lab may not be the right fit.
                 </p>
 
