@@ -1,0 +1,11 @@
+{
+  "title": "People. Organizations. Futures Lab",
+  "description": "Empowering people-centered government, this platform enhances organizational capacity and fosters inclusive policy innovations through community engagement and research.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
