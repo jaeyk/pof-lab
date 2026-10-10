@@ -253,7 +253,7 @@ export default function App() {
                 <div className="mt-10 grid gap-8 border-t border-[var(--line)] pt-8 md:grid-cols-2">
                   <p className="text-xl leading-relaxed">
                     Public universities are a critical but often overlooked
-                    part of the social safety net.
+                    part of the U.S. social safety net.
                   </p>
                   <p className="leading-relaxed text-[var(--ink)]">
                     This project seeks to understand the vital but varied roles public universities play in addressing food insecurity among low-income students, from operating basic needs centers to providing food pantries.
