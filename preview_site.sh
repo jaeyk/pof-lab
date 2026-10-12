@@ -7,10 +7,18 @@ cd "$(dirname "$0")"
 URL=http://localhost:8443/
 
 # If a preview is already running, just open it.
-if curl -s -o /dev/null "$URL"; then
+if curl -s -m 3 -o /dev/null "$URL"; then
   echo "A preview is already running at $URL"
   open "$URL"
   exit 0
+fi
+
+# A preview paused with Ctrl+Z still holds the port but never answers. Stop it.
+STUCK=$(lsof -ti tcp:8443 -sTCP:LISTEN || true)
+if [ -n "$STUCK" ]; then
+  echo "Stopping a stuck preview on port 8443."
+  kill -9 $STUCK
+  sleep 1
 fi
 
 npx --yes pnpm@10.34.3 install --frozen-lockfile
