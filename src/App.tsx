@@ -1,3 +1,4 @@
+import julietPhoto from "../images/juliet-web.jpg";
 import serenaPhoto from "../images/serena-web.jpg";
 
 const campusImage =
@@ -266,23 +267,23 @@ export default function App() {
 
         <section id="people" className="scroll-mt-8">
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-16">
-            <article className="grid max-w-5xl overflow-hidden rounded-[2rem] bg-[var(--blue)] text-white md:grid-cols-[0.34fr_0.66fr]">
-              <div className="relative min-h-72 overflow-hidden bg-[var(--sky)] md:min-h-80">
+            <article className="grid max-w-3xl overflow-hidden rounded-[2rem] bg-[var(--blue)] text-white md:grid-cols-[0.3fr_0.7fr]">
+              <div className="relative min-h-56 overflow-hidden bg-[var(--sky)] md:min-h-60">
                 <img
                   src="https://github.com/jaeyk.png"
                   alt="Jae Yeon Kim"
                   className="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 hover:grayscale-0"
                 />
               </div>
-              <div className="flex flex-col justify-between p-7 md:p-8">
+              <div className="flex flex-col justify-between p-6">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.18em] text-white">
                     Lab Founder &amp; Director
                   </p>
-                  <h2 className="mt-5 font-display text-4xl tracking-[-0.03em] md:text-5xl">
+                  <h2 className="mt-3 font-display text-3xl tracking-[-0.03em] md:text-4xl">
                     Jae Yeon Kim
                   </h2>
-                  <p className="mt-4 max-w-xl leading-relaxed text-white">
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-white">
                     Assistant Professor of Public Policy at the University of
                     North Carolina at Chapel Hill. Previously, Senior Data Scientist at Code for America.
                   </p>
@@ -291,7 +292,7 @@ export default function App() {
                   href="https://jaeyk.github.io/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex w-fit items-center gap-3 border-b border-white/70 pb-1 text-sm font-bold uppercase tracking-[0.14em]"
+                  className="mt-6 inline-flex w-fit items-center gap-3 border-b border-white/70 pb-1 text-sm font-bold uppercase tracking-[0.14em]"
                 >
                   Visit Jae’s website
                   <ArrowIcon />
@@ -313,35 +314,40 @@ export default function App() {
                   {
                     name: "Juliet Rose Loffredo",
                     field: "Journalism and Public Policy undergraduate",
-                    photo: undefined,
+                    photo: julietPhoto,
                   },
                 ].map((person) => (
                   <article
                     key={person.name}
-                    className="grid gap-4 border-b border-[var(--line)] py-8 md:grid-cols-2 md:items-center"
+                    className="flex flex-col gap-6 border-b border-[var(--line)] py-10 sm:flex-row sm:items-center sm:gap-10"
                   >
-                    <div className="flex items-center gap-5">
-                      {person.photo ? (
-                        <img
-                          src={person.photo}
-                          alt={person.name}
-                          className="size-24 shrink-0 rounded-full object-cover object-top grayscale transition duration-700 hover:grayscale-0"
-                        />
-                      ) : (
-                        <div
-                          aria-hidden="true"
-                          className="flex size-24 shrink-0 items-center justify-center rounded-full bg-[var(--sky)] font-display text-3xl"
-                        >
-                          {person.name[0]}
-                        </div>
-                      )}
-                      <h3 className="font-display text-3xl">{person.name}</h3>
+                    {person.photo ? (
+                      <img
+                        src={person.photo}
+                        alt={person.name}
+                        className="size-36 shrink-0 rounded-full object-cover object-top grayscale transition duration-700 hover:grayscale-0 md:size-44"
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        className="flex size-36 shrink-0 items-center justify-center rounded-full bg-[var(--sky)] font-display text-5xl md:size-44"
+                      >
+                        {person.name[0]}
+                      </div>
+                    )}
+                    <div>
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--blue)]">
+                        Research Assistant
+                      </p>
+                      <h3 className="mt-3 font-display text-4xl tracking-[-0.03em] md:text-5xl">
+                        {person.name}
+                      </h3>
+                      <p className="mt-4 text-lg leading-relaxed text-[var(--ink)]">
+                        {person.field}
+                        <br />
+                        University of North Carolina at Chapel Hill
+                      </p>
                     </div>
-                    <p className="text-base leading-relaxed text-[var(--ink)] md:text-right">
-                      Research Assistant · {person.field}
-                      <br />
-                      University of North Carolina at Chapel Hill
-                    </p>
                   </article>
                 ))}
               </div>
