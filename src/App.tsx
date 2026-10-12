@@ -283,10 +283,30 @@ export default function App() {
                   <h2 className="mt-3 font-display text-3xl tracking-[-0.03em] md:text-4xl">
                     Jae Yeon Kim
                   </h2>
-                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-white">
-                    Assistant Professor of Public Policy at the University of
-                    North Carolina at Chapel Hill. Previously, Senior Data Scientist at Code for America.
-                  </p>
+                  <dl className="mt-5 max-w-xl space-y-4 border-t border-white/40 pt-5">
+                    <div>
+                      <dt className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">
+                        Current
+                      </dt>
+                      <dd className="mt-1 text-lg leading-snug">
+                        <span className="font-bold">
+                          Assistant Professor of Public Policy
+                        </span>
+                        <br />
+                        University of North Carolina at Chapel Hill
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">
+                        Previously
+                      </dt>
+                      <dd className="mt-1 text-lg leading-snug">
+                        <span className="font-bold">Senior Data Scientist</span>
+                        <br />
+                        Code for America
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
                 <a
                   href="https://jaeyk.github.io/"
@@ -339,7 +359,7 @@ export default function App() {
                       <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--blue)]">
                         Research Assistant
                       </p>
-                      <h3 className="mt-3 font-display text-4xl tracking-[-0.03em] md:text-5xl">
+                      <h3 className="mt-3 font-display text-3xl tracking-[-0.03em] md:text-4xl">
                         {person.name}
                       </h3>
                       <p className="mt-4 text-lg leading-relaxed text-[var(--ink)]">
