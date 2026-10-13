@@ -473,9 +473,9 @@ export default function App() {
 
 
                 <p className="mt-10 max-w-3xl rounded-2xl bg-[var(--ink)] p-7 font-display text-2xl leading-snug text-white md:p-8 md:text-3xl">
-                  We welcome applications from students whose career goals and sense of
-                  purpose align closely with the lab’s mission and research
-                  approach.
+                  We welcome self-motivated students who can tackle projects
+                  with a healthy dose of skepticism, a big dose of imagination,
+                  and relentless attention to detail.
                 </p>
 
                 <div
