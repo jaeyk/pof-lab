@@ -1,3 +1,4 @@
+import carolinePhoto from "../images/caroline-web.jpg";
 import julietPhoto from "../images/juliet-web.jpg";
 import kiraPhoto from "../images/kira-web.jpg";
 import serenaPhoto from "../images/serena-web.jpg";
@@ -418,6 +419,14 @@ export default function App() {
                     details: [
                       "Senior Manager",
                       "Aspen Institute Financial Security Program",
+                    ],
+                  },
+                  {
+                    name: "Caroline Siegel Singh",
+                    photo: carolinePhoto,
+                    details: [
+                      "Manager, AI & Emerging Technologies",
+                      "Federation of American Scientists",
                     ],
                   },
                 ].map((person) => (
