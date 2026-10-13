@@ -417,8 +417,8 @@ export default function App() {
                     name: "Kira Tebbe",
                     photo: kiraPhoto,
                     details: [
-                      "Senior Manager",
-                      "Aspen Institute Financial Security Program",
+                      "Senior Manager, Financial Security Program",
+                      "Aspen Institute",
                     ],
                   },
                   {
