@@ -1,4 +1,5 @@
 import julietPhoto from "../images/juliet-web.jpg";
+import kiraPhoto from "../images/kira-web.jpg";
 import serenaPhoto from "../images/serena-web.jpg";
 
 const campusImage =
@@ -73,6 +74,57 @@ function Eyebrow({
   );
 }
 
+function PersonRow({
+  role,
+  name,
+  photo,
+  details,
+}: {
+  role?: string;
+  name: string;
+  photo?: string;
+  details: string[];
+}) {
+  return (
+    <article className="flex flex-col gap-6 border-b border-[var(--line)] py-10 sm:flex-row sm:items-center sm:gap-10">
+      {photo ? (
+        <img
+          src={photo}
+          alt={name}
+          className="size-36 shrink-0 rounded-full object-cover object-top grayscale transition duration-700 hover:grayscale-0 md:size-44"
+        />
+      ) : (
+        <div
+          aria-hidden="true"
+          className="flex size-36 shrink-0 items-center justify-center rounded-full bg-[var(--sky)] font-display text-5xl md:size-44"
+        >
+          {name[0]}
+        </div>
+      )}
+      <div>
+        {role && (
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-[var(--blue)]">
+            {role}
+          </p>
+        )}
+        <h3 className="font-display text-3xl tracking-[-0.03em] md:text-4xl">
+          {name}
+        </h3>
+        {details.length > 0 && (
+          <p className="mt-4 text-lg leading-relaxed text-[var(--ink)]">
+            {details.map((line, index) => (
+              <span key={line}>
+                {index > 0 && <br />}
+                {line}
+              </span>
+            ))}
+          </p>
+        )}
+      </div>
+    </article>
+  );
+}
+
 export default function App() {
   return (
     <div className="min-h-screen overflow-hidden bg-[var(--paper)] text-[var(--ink)]">
@@ -104,13 +156,16 @@ export default function App() {
             <a className="nav-link" href="#people">
               People
             </a>
+            <a className="nav-link" href="#join">
+              Join
+            </a>
           </nav>
 
           <a
-            href="#work"
-            className="group hidden items-center gap-2 rounded-full border border-[var(--ink)] px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-[var(--ink)] hover:text-white md:flex"
+            href="#apply"
+            className="group hidden items-center gap-2 rounded-full border border-[var(--ink)] bg-[var(--ink)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-transparent hover:text-[var(--ink)] md:flex"
           >
-            Explore our work
+            Apply to join
             <ArrowIcon />
           </a>
         </div>
@@ -337,38 +392,41 @@ export default function App() {
                     photo: julietPhoto,
                   },
                 ].map((person) => (
-                  <article
+                  <PersonRow
                     key={person.name}
-                    className="flex flex-col gap-6 border-b border-[var(--line)] py-10 sm:flex-row sm:items-center sm:gap-10"
-                  >
-                    {person.photo ? (
-                      <img
-                        src={person.photo}
-                        alt={person.name}
-                        className="size-36 shrink-0 rounded-full object-cover object-top grayscale transition duration-700 hover:grayscale-0 md:size-44"
-                      />
-                    ) : (
-                      <div
-                        aria-hidden="true"
-                        className="flex size-36 shrink-0 items-center justify-center rounded-full bg-[var(--sky)] font-display text-5xl md:size-44"
-                      >
-                        {person.name[0]}
-                      </div>
-                    )}
-                    <div>
-                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--blue)]">
-                        Research Assistant
-                      </p>
-                      <h3 className="mt-3 font-display text-3xl tracking-[-0.03em] md:text-4xl">
-                        {person.name}
-                      </h3>
-                      <p className="mt-4 text-lg leading-relaxed text-[var(--ink)]">
-                        {person.field}
-                        <br />
-                        University of North Carolina at Chapel Hill
-                      </p>
-                    </div>
-                  </article>
+                    role="Research Assistant"
+                    name={person.name}
+                    photo={person.photo}
+                    details={[
+                      person.field,
+                      "University of North Carolina at Chapel Hill",
+                    ]}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-14 grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
+              <h2 className="font-display text-5xl tracking-[-0.03em]">
+                Advisory Board
+              </h2>
+              <div className="border-t border-[var(--ink)]">
+                {[
+                  {
+                    name: "Kira Tebbe",
+                    photo: kiraPhoto,
+                    details: [
+                      "Senior Manager",
+                      "Aspen Institute Financial Security Program",
+                    ],
+                  },
+                ].map((person) => (
+                  <PersonRow
+                    key={person.name}
+                    name={person.name}
+                    photo={person.photo}
+                    details={person.details}
+                  />
                 ))}
               </div>
             </div>
@@ -402,24 +460,59 @@ export default function App() {
                   approach.
                 </p>
 
-                <p className="mt-8 max-w-3xl border-l-4 border-[var(--ink)] py-1 pl-5 text-lg font-semibold leading-relaxed">
-                  Note: If your primary goal is to quickly add another
-                  line to your resume, this lab may not be the right fit.
-                </p>
-
-                <a
-                  href="https://forms.gle/hMjJGYKHZkuRD3dKA"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-[var(--ink)] px-7 py-4 text-lg font-bold text-white transition-transform hover:-translate-y-0.5"
+                <div
+                  id="apply"
+                  className="mt-10 max-w-3xl scroll-mt-8 rounded-2xl bg-white p-7 md:p-8"
                 >
-                  Apply to be a Research Assistant
-                  <ArrowIcon />
-                </a>
-                <p className="mt-6 w-fit max-w-3xl rounded-xl bg-[var(--sun)] px-5 py-3 text-lg font-bold leading-relaxed text-[var(--ink)]">
-                  Applications are reviewed on a rolling basis. Please prepare
-                  a CV and cover letter.
-                </p>
+                  <h3 className="font-display text-3xl tracking-[-0.03em] md:text-4xl">
+                    How to apply
+                  </h3>
+                  <p className="mt-5 border-l-4 border-[var(--ink)] py-1 pl-5 text-lg font-semibold leading-relaxed">
+                    Note: If your primary goal is to quickly add another line
+                    to your resume, this lab may not be the right fit.
+                  </p>
+                  <ol className="mt-8 space-y-5">
+                    {[
+                      {
+                        title: "Prepare a CV and a cover letter",
+                        body: "Both are required. Applications without a cover letter are incomplete.",
+                      },
+                      {
+                        title: "Complete the application form",
+                        body: "Include your CV and cover letter with your application.",
+                      },
+                    ].map((step, index) => (
+                      <li key={step.title} className="flex gap-4">
+                        <span
+                          aria-hidden="true"
+                          className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--sun)] text-lg font-bold"
+                        >
+                          {index + 1}
+                        </span>
+                        <div>
+                          <p className="text-xl font-bold leading-snug">
+                            {step.title}
+                          </p>
+                          <p className="mt-1 text-lg leading-relaxed">
+                            {step.body}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                  <a
+                    href="https://forms.gle/hMjJGYKHZkuRD3dKA"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex items-center gap-3 rounded-full bg-[var(--ink)] px-7 py-4 text-lg font-bold text-white transition-transform hover:-translate-y-0.5"
+                  >
+                    Open the application form
+                    <ArrowIcon />
+                  </a>
+                  <p className="mt-5 text-base font-semibold leading-relaxed">
+                    Applications are reviewed on a rolling basis.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
