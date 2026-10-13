@@ -454,7 +454,7 @@ export default function App() {
                 </p>
                 <div className="mt-8 max-w-3xl space-y-6">
                   <p className="border-l-4 border-[var(--ink)] py-1 pl-5 text-lg leading-relaxed md:text-xl">
-                    Our focus, however, is on{" "}
+                    Our focus is on{" "}
                     <strong className="font-semibold">
                       organizations and their effectiveness
                     </strong>
