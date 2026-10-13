@@ -444,14 +444,32 @@ export default function App() {
                 <h2 className="max-w-4xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
                   Research Assistant positions
                 </h2>
-                <p className="mt-8 max-w-3xl text-xl leading-relaxed">
-                  POF Lab provides ample opportunities to learn how to conduct
-                  research from end to end, from idea generation to research
-                  presentation and communication. We use mixed methods,
-                  integrating insights from computational, quantitative, and
-                  qualitative approaches to strengthen the credibility of our
-                  findings.
+                <p className="mt-8 max-w-3xl text-xl leading-relaxed md:text-2xl">
+                  The POF Lab Research Assistant Program offers a unique
+                  opportunity to join a growing community of researchers and
+                  practitioners working to make our governments more{" "}
+                  <strong className="font-semibold">people-centered</strong>.
+                  Students will gain research experience in addressing pressing
+                  societal problems using design, data, and technology.
                 </p>
+                <div className="mt-8 max-w-3xl space-y-6">
+                  <p className="border-l-4 border-[var(--ink)] py-1 pl-5 text-lg leading-relaxed md:text-xl">
+                    Our focus, however, is on{" "}
+                    <strong className="font-semibold">
+                      organizations and their effectiveness
+                    </strong>
+                    , as organizations are the ones that develop and put these
+                    capacities into practice.
+                  </p>
+                  <p className="border-l-4 border-[var(--ink)] py-1 pl-5 text-lg leading-relaxed md:text-xl">
+                    While we pursue{" "}
+                    <strong className="font-semibold">rigor</strong>, we also
+                    value{" "}
+                    <strong className="font-semibold">imagination</strong>. To
+                    make a difference, we must first imagine how things could
+                    be different.
+                  </p>
+                </div>
 
 
                 <p className="mt-10 max-w-3xl rounded-2xl bg-[var(--ink)] p-7 font-display text-2xl leading-snug text-white md:p-8 md:text-3xl">
