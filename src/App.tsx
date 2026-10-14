@@ -1,4 +1,5 @@
 import carolinePhoto from "../images/caroline-web.jpg";
+import ericPhoto from "../images/eric-web.jpg";
 import julietPhoto from "../images/juliet-web.jpg";
 import kiraPhoto from "../images/kira-web.jpg";
 import serenaPhoto from "../images/serena-web.jpg";
@@ -427,6 +428,15 @@ export default function App() {
                     details: [
                       "Manager, AI & Emerging Technologies",
                       "Federation of American Scientists",
+                    ],
+                  },
+                  {
+                    name: "Eric Giannella",
+                    photo: ericPhoto,
+                    details: [
+                      "Associate Research Professor",
+                      "Massive Data Institute and Better Government Lab",
+                      "Georgetown University",
                     ],
                   },
                 ].map((person) => (
