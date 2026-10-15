@@ -1,10 +1,11 @@
 import carolinePhoto from "../images/caroline-web.jpg";
 import ericPhoto from "../images/eric-web.jpg";
+import gabePhoto from "../images/gabe-web.jpg";
 import julietPhoto from "../images/juliet-web.jpg";
 import kiraPhoto from "../images/kira-web.jpg";
 import serenaPhoto from "../images/serena-web.jpg";
 
-const campusImage =
+const orchestraImage =
   "https://images.unsplash.com/photo-1745328597392-8b6a8f673e46?auto=format&fit=crop&w=1800&q=85";
 
 function ArrowIcon() {
@@ -202,23 +203,6 @@ export default function App() {
               </a>
             </div>
           </div>
-
-          <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16">
-            <div className="relative h-[38vh] min-h-72 overflow-hidden rounded-t-[2rem] md:h-[50vh]">
-              <img
-                src={campusImage}
-                alt="An orchestra rehearses under the direction of a conductor"
-                className="h-full w-full object-cover object-[70%_10%]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(12,33,46,0.48)] via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 rounded-full bg-[var(--paper)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] md:bottom-8 md:left-8">
-                Policy, designed with people
-              </div>
-              <div className="absolute left-5 top-5 rounded-full bg-black/70 px-3 py-1.5 text-xs font-medium text-white md:bottom-8 md:left-auto md:right-8 md:top-auto">
-                Photo by Kazuo ota via Unsplash
-              </div>
-            </div>
-          </div>
         </section>
 
         <section
@@ -243,12 +227,6 @@ export default function App() {
                   strengthening organizational capacity, improving policy
                   implementation, and opening pathways toward more inclusive
                   and prosperous futures.
-                </p>
-                <p className="mt-8 max-w-3xl border-l border-[var(--sky)] pl-6 font-display text-2xl leading-snug text-white md:text-3xl">
-                  Making policy work is like conducting an orchestra: the whole
-                  is more than the sum of its parts. For the orchestra to
-                  succeed, the conductor must listen to the musicians as much
-                  as the musicians follow the conductor’s lead.
                 </p>
               </div>
             </div>
@@ -283,6 +261,97 @@ export default function App() {
                 </article>
               ))}
             </div>
+
+            <figure className="mt-14">
+              <div className="grid items-center gap-8 md:grid-cols-2">
+                <svg
+                  viewBox="0 0 600 580"
+                  role="img"
+                  aria-label="Venn diagram of Organizations, Futures, and People. Organizations and Futures overlap in strategic foresight, Organizations and People in service design, People and Futures in civic imagination. All three meet at what we do."
+                  className="h-auto w-full"
+                >
+                  <g stroke="rgba(255,255,255,0.7)" strokeWidth="2">
+                    <circle
+                      cx="200"
+                      cy="200"
+                      r="175"
+                      fill="var(--blue)"
+                      fillOpacity="0.6"
+                    />
+                    <circle
+                      cx="400"
+                      cy="200"
+                      r="175"
+                      fill="var(--green)"
+                      fillOpacity="0.6"
+                    />
+                    <circle
+                      cx="300"
+                      cy="370"
+                      r="175"
+                      fill="var(--sky)"
+                      fillOpacity="0.6"
+                    />
+                  </g>
+                  <g fill="white" textAnchor="middle" className="font-display">
+                    <text x="122" y="190" fontSize="31">
+                      Organizations
+                    </text>
+                    <text x="478" y="190" fontSize="31">
+                      Futures
+                    </text>
+                    <text x="300" y="485" fontSize="31">
+                      People
+                    </text>
+                    <text x="300" y="262" fontSize="30" fontWeight="700">
+                      <tspan x="300" dy="0">
+                        What
+                      </tspan>
+                      <tspan x="300" dy="32">
+                        We Do
+                      </tspan>
+                    </text>
+                    <g fontSize="20" opacity="0.92">
+                      <text x="300" y="138">
+                        <tspan x="300">Strategic</tspan>
+                        <tspan x="300" dy="23">
+                          Foresight
+                        </tspan>
+                      </text>
+                      <text x="190" y="316">
+                        <tspan x="190">Service</tspan>
+                        <tspan x="190" dy="23">
+                          Design
+                        </tspan>
+                      </text>
+                      <text x="406" y="314">
+                        <tspan x="406">Civic</tspan>
+                        <tspan x="406" dy="23">
+                          Imagination
+                        </tspan>
+                      </text>
+                    </g>
+                  </g>
+                </svg>
+                <div className="relative h-full min-h-72 overflow-hidden rounded-[2rem]">
+                  <img
+                    src={orchestraImage}
+                    alt="An orchestra rehearses under the direction of a conductor"
+                    className="absolute inset-0 h-full w-full object-cover object-[70%_10%]"
+                  />
+                  <div className="absolute bottom-4 right-4 rounded-full bg-black/70 px-3 py-1.5 text-xs font-medium text-white">
+                    Photo by Kazuo ota via Unsplash
+                  </div>
+                </div>
+              </div>
+              <figcaption className="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-white md:text-xl">
+                <strong className="font-semibold text-[var(--sky)]">
+                  Governing in concert.
+                </strong>{" "}
+                Like an orchestra, policy works when leaders listen as much as
+                they lead.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -438,6 +507,11 @@ export default function App() {
                       "Massive Data Institute and Better Government Lab",
                       "Georgetown University",
                     ],
+                  },
+                  {
+                    name: "Gabe Menchaca",
+                    photo: gabePhoto,
+                    details: ["Director of State Capacity", "Niskanen Center"],
                   },
                 ].map((person) => (
                   <PersonRow
