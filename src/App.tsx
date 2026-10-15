@@ -344,7 +344,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <figcaption className="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-white md:text-xl">
+              <figcaption className="mt-8 text-center text-lg leading-relaxed text-white lg:whitespace-nowrap xl:text-xl">
                 <strong className="font-semibold text-[var(--sky)]">
                   Governing in concert.
                 </strong>{" "}
