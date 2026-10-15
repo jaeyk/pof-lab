@@ -23,6 +23,46 @@ function ArrowIcon() {
   );
 }
 
+const keywordIconPaths = {
+  people:
+    "M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM2.5 20c.5-3.8 3.1-6 6.5-6s6 2.2 6.5 6M16 4.5a3.5 3.5 0 0 1 0 6.5M18 14.3c2 .8 3.2 2.8 3.5 5.7",
+  design:
+    "M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.6 7.6M11 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
+  data: "M4 20V10M10 20V4M16 20v-7M22 20H2",
+  technology:
+    "M7 7h10v10H7zM10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3",
+  organizations:
+    "M3 21h18M5 21V9l7-5 7 5v12M9 21v-5h6v5M9 11h.01M15 11h.01",
+  futures:
+    "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3 6.3-2.1z",
+};
+
+function LineIcon({ icon, className }: { icon: keyof typeof keywordIconPaths; className: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d={keywordIconPaths[icon]} />
+    </svg>
+  );
+}
+
+function Keyword({ icon, children }: { icon: keyof typeof keywordIconPaths; children: React.ReactNode }) {
+  return (
+    <strong className="inline-flex items-baseline gap-1.5 whitespace-nowrap font-bold text-[var(--blue)]">
+      <LineIcon icon={icon} className="size-[0.9em] shrink-0 self-center" />
+      {children}
+    </strong>
+  );
+}
+
 function ListeningMark() {
   return (
     <svg
@@ -190,9 +230,9 @@ export default function App() {
             <div className="relative z-10 lg:pb-3">
               <p className="max-w-xl text-lg leading-relaxed text-[var(--ink)] sm:text-xl md:text-2xl">
                 A research lab advancing{" "}
-                <strong className="font-bold text-[var(--blue)]">people-centered</strong> government through{" "}
-                <strong className="font-bold text-[var(--blue)]">design</strong>, <strong className="font-bold text-[var(--blue)]">data</strong>, and{" "}
-                <strong className="font-bold text-[var(--blue)]">technology</strong>.
+                <Keyword icon="people">people-centered</Keyword> government through{" "}
+                <Keyword icon="design">design</Keyword>, <Keyword icon="data">data</Keyword>, and{" "}
+                <Keyword icon="technology">technology</Keyword>.
               </p>
               <a
                 href="#mission"
@@ -235,14 +275,17 @@ export default function App() {
               {[
                 {
                   title: "People",
+                  icon: "people" as const,
                   before: "Without ", keyword: "people", after: ", policy loses its purpose.",
                 },
                 {
                   title: "Organizations",
+                  icon: "organizations" as const,
                   before: "Without effective ", keyword: "organizations", after: ", policy struggles to deliver on its promises.",
                 },
                 {
                   title: "Futures",
+                  icon: "futures" as const,
                   before: "Without imagining alternative ", keyword: "futures", after: ", policy remains constrained by the present.",
                 },
               ].map((item) => (
@@ -250,7 +293,10 @@ export default function App() {
                   key={item.title}
                   className="border-b border-white/20 py-9 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
                 >
-                  <h2 className="font-display text-4xl">{item.title}</h2>
+                  <h2 className="flex items-center gap-3 font-display text-4xl">
+                    <LineIcon icon={item.icon} className="size-8 shrink-0 text-[var(--sky)]" />
+                    {item.title}
+                  </h2>
                   <p className="mt-4 max-w-sm leading-relaxed text-white">
                     {item.before}
                     <strong className="font-bold text-[var(--sky)]">
