@@ -313,30 +313,30 @@ export default function App() {
                 <svg
                   viewBox="0 0 600 580"
                   role="img"
-                  aria-label="Venn diagram of Organizations, Futures, and People. Organizations and Futures overlap in strategic foresight, Organizations and People in service design, People and Futures in civic imagination. All three meet at what we do."
+                  aria-label="Venn diagram of Organizations, Futures, and People. Organizations and Futures overlap in adaptive capacity, Organizations and People in human-centered delivery, People and Futures in participatory futures. All three meet at what we do."
                   className="h-auto w-full"
                 >
-                  <g stroke="rgba(255,255,255,0.7)" strokeWidth="2">
+                  <g stroke="rgba(255,255,255,0.55)" strokeWidth="1.5">
                     <circle
                       cx="200"
                       cy="200"
                       r="175"
-                      fill="var(--blue)"
-                      fillOpacity="0.6"
+                      fill="var(--sky)"
+                      fillOpacity="0.22"
                     />
                     <circle
                       cx="400"
                       cy="200"
                       r="175"
-                      fill="var(--green)"
-                      fillOpacity="0.6"
+                      fill="var(--sky)"
+                      fillOpacity="0.22"
                     />
                     <circle
                       cx="300"
                       cy="370"
                       r="175"
                       fill="var(--sky)"
-                      fillOpacity="0.6"
+                      fillOpacity="0.22"
                     />
                   </g>
                   <g fill="white" textAnchor="middle" className="font-display">
@@ -359,21 +359,21 @@ export default function App() {
                     </text>
                     <g fontSize="20" opacity="0.92">
                       <text x="300" y="138">
-                        <tspan x="300">Strategic</tspan>
+                        <tspan x="300">Adaptive</tspan>
                         <tspan x="300" dy="23">
-                          Foresight
+                          Capacity
                         </tspan>
                       </text>
-                      <text x="190" y="316">
-                        <tspan x="190">Service</tspan>
-                        <tspan x="190" dy="23">
-                          Design
+                      <text x="200" y="330">
+                        <tspan x="200">Human-Centered</tspan>
+                        <tspan x="200" dy="23">
+                          Delivery
                         </tspan>
                       </text>
-                      <text x="406" y="314">
-                        <tspan x="406">Civic</tspan>
-                        <tspan x="406" dy="23">
-                          Imagination
+                      <text x="400" y="330">
+                        <tspan x="400">Participatory</tspan>
+                        <tspan x="400" dy="23">
+                          Futures
                         </tspan>
                       </text>
                     </g>
