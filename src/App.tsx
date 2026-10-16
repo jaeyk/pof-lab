@@ -450,7 +450,7 @@ export default function App() {
               <div className="flex flex-col justify-between p-6">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.18em] text-white">
-                    Lab Founder &amp; Director
+                    Founder &amp; Director
                   </p>
                   <h2 className="mt-3 font-display text-3xl tracking-[-0.03em] md:text-4xl">
                     Jae Yeon Kim
