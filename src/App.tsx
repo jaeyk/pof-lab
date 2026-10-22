@@ -430,7 +430,7 @@ export default function App() {
                     part of the U.S. social safety net.
                   </p>
                   <p className="leading-relaxed text-[var(--ink)]">
-                    This project seeks to understand the vital but varied roles public universities play in addressing food insecurity among low-income students, from operating basic needs centers to providing food pantries.
+                    This project seeks to understand the vital but varied roles public universities play in addressing food insecurity among low-income students, ranging from operating food pantries and basic needs centers to providing assistance with SNAP applications.
                   </p>
                 </div>
                 <img
