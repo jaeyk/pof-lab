@@ -1,4 +1,5 @@
 import carolinePhoto from "../images/caroline-web.jpg";
+import basicNeedsMap from "../images/bn_center_map.png";
 import ericPhoto from "../images/eric-web.jpg";
 import gabePhoto from "../images/gabe-web.jpg";
 import julietPhoto from "../images/juliet-web.jpg";
@@ -417,10 +418,15 @@ export default function App() {
                 <p className="font-mono text-base text-[var(--ink)]">
                   Research / Safety Net Programs &amp; Higher Education
                 </p>
+                <img
+                  src={basicNeedsMap}
+                  alt="Three U.S. maps showing the share of nearby public colleges and universities offering a food pantry, SNAP assistance, and a basic needs center. Food pantries are common nationwide; SNAP assistance and basic needs centers are concentrated on the West Coast and in parts of the Upper Midwest and Northeast."
+                  className="mt-6 w-full rounded-2xl border border-[var(--line)] bg-white"
+                />
                 <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
                   Higher Education as{" "}
                   <span className="italic text-[var(--blue)]">
-                    Safety Net Infrastructure
+                    Fragmented Safety Net Infrastructure
                   </span>
                 </h2>
                 <div className="mt-10 grid gap-8 border-t border-[var(--line)] pt-8 md:grid-cols-2">
