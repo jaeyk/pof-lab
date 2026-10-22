@@ -436,7 +436,7 @@ export default function App() {
                 <img
                   src={basicNeedsMap}
                   alt="Three U.S. maps showing the share of nearby public colleges and universities offering a food pantry, SNAP assistance, and a basic needs center. Food pantries are common nationwide; SNAP assistance and basic needs centers are concentrated on the West Coast and in parts of the Upper Midwest and Northeast."
-                  className="mt-8 w-full rounded-2xl border border-[var(--line)] bg-white"
+                  className="mt-8 w-full max-w-3xl rounded-2xl border border-[var(--line)] bg-white"
                 />
               </article>
             </div>
