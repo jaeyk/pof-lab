@@ -2,6 +2,7 @@ import carolinePhoto from "../images/caroline-web.jpg";
 import basicNeedsMap from "../images/bn_center_map.png";
 import ericPhoto from "../images/eric-web.jpg";
 import gabePhoto from "../images/gabe-web.jpg";
+import joaquinPhoto from "../images/joaquin-web.jpg";
 import julietPhoto from "../images/juliet-web.jpg";
 import kiraPhoto from "../images/kira-web.jpg";
 import serenaPhoto from "../images/serena-web.jpg";
@@ -564,6 +565,14 @@ export default function App() {
                     name: "Gabe Menchaca",
                     photo: gabePhoto,
                     details: ["Director of State Capacity", "Niskanen Center"],
+                  },
+                  {
+                    name: "Joaquin Carbonell",
+                    photo: joaquinPhoto,
+                    details: [
+                      "Chief, Research Bureau",
+                      "California Department of Social Services",
+                    ],
                   },
                 ].map((person) => (
                   <PersonRow
