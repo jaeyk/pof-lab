@@ -1,6 +1,5 @@
 import { useState } from "react";
 import carolinePhoto from "../images/caroline-web.jpg";
-import basicNeedsMap from "../images/bn_center_map.png";
 import ericPhoto from "../images/eric-web.jpg";
 import gabePhoto from "../images/gabe-web.jpg";
 import joaquinPhoto from "../images/joaquin-web.jpg";
@@ -203,11 +202,23 @@ const projects: Project[] = [
             centers to providing assistance with SNAP applications.
           </p>
         </div>
-        <img
-          src={basicNeedsMap}
-          alt="Three U.S. maps showing the share of nearby public colleges and universities offering a food pantry, SNAP assistance, and a basic needs center. Food pantries are common nationwide; SNAP assistance and basic needs centers are concentrated on the West Coast and in parts of the Upper Midwest and Northeast."
-          className="mt-8 w-full max-w-3xl rounded-2xl border border-[var(--line)] bg-white"
-        />
+        <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
+          <iframe
+            src="https://jaeyk.github.io/student_basic_needs_map/"
+            title="Student Basic Needs Map"
+            loading="lazy"
+            className="block h-[560px] w-full md:h-[680px]"
+          />
+        </div>
+        <a
+          href="https://jaeyk.github.io/student_basic_needs_map/"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-flex items-center gap-3 border-b border-[var(--ink)] pb-1 text-sm font-bold uppercase tracking-[0.14em]"
+        >
+          Open the map in a new tab
+          <ArrowIcon />
+        </a>
       </>
     ),
   },
