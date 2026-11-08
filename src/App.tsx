@@ -1,3 +1,4 @@
+import { useState } from "react";
 import carolinePhoto from "../images/caroline-web.jpg";
 import basicNeedsMap from "../images/bn_center_map.png";
 import ericPhoto from "../images/eric-web.jpg";
@@ -170,10 +171,101 @@ function PersonRow({
   );
 }
 
+type Project = {
+  id: string;
+  status: string;
+  tags: string[];
+  content: React.ReactNode;
+};
+
+const projects: Project[] = [
+  {
+    id: "higher-education-safety-net",
+    status: "In progress",
+    tags: ["Safety Net", "SNAP", "Higher Education"],
+    content: (
+      <>
+        <p className="font-mono text-base text-[var(--ink)]">
+          Research / Safety Net Programs &amp; Higher Education
+        </p>
+        <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
+          Higher Education as{" "}
+          <span className="italic text-[var(--blue)]">
+            Fragmented Safety Net Infrastructure
+          </span>
+        </h2>
+        <div className="mt-10 grid gap-8 border-t border-[var(--line)] pt-8 md:grid-cols-2">
+          <p className="text-xl leading-relaxed">
+            Public universities are a critical but often overlooked part of the
+            U.S. social safety net.
+          </p>
+          <p className="leading-relaxed text-[var(--ink)]">
+            This project seeks to understand the vital but varied roles public
+            universities play in addressing food insecurity among low-income
+            students, ranging from operating food pantries and basic needs
+            centers to providing assistance with SNAP applications.
+          </p>
+        </div>
+        <img
+          src={basicNeedsMap}
+          alt="Three U.S. maps showing the share of nearby public colleges and universities offering a food pantry, SNAP assistance, and a basic needs center. Food pantries are common nationwide; SNAP assistance and basic needs centers are concentrated on the West Coast and in parts of the Upper Midwest and Northeast."
+          className="mt-8 w-full max-w-3xl rounded-2xl border border-[var(--line)] bg-white"
+        />
+      </>
+    ),
+  },
+  {
+    id: "snap-interview-atlas",
+    status: "Ongoing",
+    tags: ["Safety Net", "SNAP"],
+    content: (
+      <>
+        <p className="font-mono text-base text-[var(--ink)]">
+          Crowdsourced data / SNAP administration
+        </p>
+        <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
+          SNAP{" "}
+          <span className="italic text-[var(--blue)]">Interview Atlas</span>
+        </h2>
+        <p className="mt-10 max-w-3xl border-t border-[var(--line)] pt-8 text-xl leading-relaxed">
+          This is an ongoing crowdsourced project to document how states and
+          counties explain the SNAP interview requirement to applicants on
+          their websites.
+        </p>
+        <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
+          <iframe
+            src="https://jaeyk.github.io/snap_interview_atlas/"
+            title="SNAP Interview Atlas"
+            loading="lazy"
+            className="block h-[560px] w-full md:h-[680px]"
+          />
+        </div>
+        <a
+          href="https://jaeyk.github.io/snap_interview_atlas/"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-flex items-center gap-3 border-b border-[var(--ink)] pb-1 text-sm font-bold uppercase tracking-[0.14em]"
+        >
+          Open the atlas in a new tab
+          <ArrowIcon />
+        </a>
+      </>
+    ),
+  },
+];
+
+const projectTags = Array.from(new Set(projects.flatMap((p) => p.tags)));
+
 export default function App() {
+  const [activeTag, setActiveTag] = useState("All");
+  const visibleProjects =
+    activeTag === "All"
+      ? projects
+      : projects.filter((p) => p.tags.includes(activeTag));
+
   return (
-    <div className="min-h-screen overflow-hidden bg-[var(--paper)] text-[var(--ink)]">
-      <header className="relative z-20 border-b border-[var(--line)]">
+    <div className="min-h-screen overflow-x-clip bg-[var(--paper)] text-[var(--ink)]">
+      <header className="sticky top-0 z-30 border-b border-[var(--line)] bg-[var(--paper)]">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 md:px-10 lg:px-16">
           <a
             href="#top"
@@ -196,7 +288,7 @@ export default function App() {
               Mission
             </a>
             <a className="nav-link" href="#work">
-              Work
+              Projects
             </a>
             <a className="nav-link" href="#people">
               People
@@ -249,7 +341,7 @@ export default function App() {
 
         <section
           id="mission"
-          className="scroll-mt-8 bg-[var(--ink)] text-white"
+          className="scroll-mt-28 bg-[var(--ink)] text-white"
         >
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-16">
             <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
@@ -405,46 +497,60 @@ export default function App() {
 
         <section
           id="work"
-          className="scroll-mt-8 border-b border-[var(--line)]"
+          className="scroll-mt-28 border-b border-[var(--line)]"
         >
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-16">
             <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
-              <div>
-                <Eyebrow>Current project</Eyebrow>
-                <div className="mt-8 inline-flex rounded-full bg-[var(--sun)] px-4 py-2 text-xs font-bold uppercase tracking-[0.13em]">
-                  In progress
-                </div>
+              <Eyebrow>Projects</Eyebrow>
+              <div
+                className="flex flex-wrap gap-2"
+                role="group"
+                aria-label="Filter projects by tag"
+              >
+                {["All", ...projectTags].map((tag) => {
+                  const active = activeTag === tag;
+                  return (
+                    <button
+                      key={tag}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => setActiveTag(tag)}
+                      className={`rounded-full border border-[var(--ink)] px-4 py-2 text-xs font-bold uppercase tracking-[0.13em] transition-colors ${active ? "bg-[var(--ink)] text-white" : "hover:bg-[var(--sky)]"}`}
+                    >
+                      {tag}
+                    </button>
+                  );
+                })}
               </div>
-              <article>
-                <p className="font-mono text-base text-[var(--ink)]">
-                  Research / Safety Net Programs &amp; Higher Education
-                </p>
-                <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
-                  Higher Education as{" "}
-                  <span className="italic text-[var(--blue)]">
-                    Fragmented Safety Net Infrastructure
-                  </span>
-                </h2>
-                <div className="mt-10 grid gap-8 border-t border-[var(--line)] pt-8 md:grid-cols-2">
-                  <p className="text-xl leading-relaxed">
-                    Public universities are a critical but often overlooked
-                    part of the U.S. social safety net.
-                  </p>
-                  <p className="leading-relaxed text-[var(--ink)]">
-                    This project seeks to understand the vital but varied roles public universities play in addressing food insecurity among low-income students, ranging from operating food pantries and basic needs centers to providing assistance with SNAP applications.
-                  </p>
-                </div>
-                <img
-                  src={basicNeedsMap}
-                  alt="Three U.S. maps showing the share of nearby public colleges and universities offering a food pantry, SNAP assistance, and a basic needs center. Food pantries are common nationwide; SNAP assistance and basic needs centers are concentrated on the West Coast and in parts of the Upper Midwest and Northeast."
-                  className="mt-8 w-full max-w-3xl rounded-2xl border border-[var(--line)] bg-white"
-                />
-              </article>
             </div>
+
+            {visibleProjects.map((project) => (
+              <div
+                key={project.id}
+                className="mt-14 grid gap-12 border-t border-[var(--line)] pt-14 lg:grid-cols-[0.34fr_0.66fr]"
+              >
+                <div>
+                  <div className="inline-flex rounded-full bg-[var(--sun)] px-4 py-2 text-xs font-bold uppercase tracking-[0.13em]">
+                    {project.status}
+                  </div>
+                  <ul className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="rounded-full border border-[var(--line)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em]"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <article>{project.content}</article>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section id="people" className="scroll-mt-8">
+        <section id="people" className="scroll-mt-28">
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-16">
             <article className="grid max-w-3xl overflow-hidden rounded-[2rem] bg-[var(--blue)] text-white md:grid-cols-[0.3fr_0.7fr]">
               <div className="relative min-h-56 overflow-hidden bg-[var(--sky)] md:min-h-60">
@@ -587,7 +693,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="join" className="scroll-mt-8 bg-[var(--sky)]">
+        <section id="join" className="scroll-mt-28 bg-[var(--sky)]">
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-16">
             <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
               <div>
@@ -634,7 +740,7 @@ export default function App() {
 
                 <div
                   id="apply"
-                  className="mt-10 max-w-3xl scroll-mt-8 rounded-2xl bg-white p-7 md:p-8"
+                  className="mt-10 max-w-3xl scroll-mt-28 rounded-2xl bg-white p-7 md:p-8"
                 >
                   <h3 className="font-display text-3xl tracking-[-0.03em] md:text-4xl">
                     How to apply
@@ -690,7 +796,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="support" className="scroll-mt-8 bg-[var(--ink)] text-white">
+        <section id="support" className="scroll-mt-28 bg-[var(--ink)] text-white">
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-16">
             <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
               <div>
