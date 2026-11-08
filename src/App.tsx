@@ -185,10 +185,7 @@ const projects: Project[] = [
     tags: ["Safety Net", "SNAP", "Higher Education"],
     content: (
       <>
-        <p className="font-mono text-base text-[var(--ink)]">
-          Research / Safety Net Programs &amp; Higher Education
-        </p>
-        <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
+        <h2 className="max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
           Higher Education as{" "}
           <span className="italic text-[var(--blue)]">
             Fragmented Safety Net Infrastructure
@@ -216,22 +213,25 @@ const projects: Project[] = [
   },
   {
     id: "snap-interview-atlas",
-    status: "Ongoing",
+    status: "In progress",
     tags: ["Safety Net", "SNAP"],
     content: (
       <>
-        <p className="font-mono text-base text-[var(--ink)]">
-          Crowdsourced data / SNAP administration
-        </p>
-        <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
+        <h2 className="max-w-5xl font-display text-5xl leading-[0.98] tracking-[-0.035em] md:text-7xl">
           SNAP{" "}
           <span className="italic text-[var(--blue)]">Interview Atlas</span>
         </h2>
-        <p className="mt-10 max-w-3xl border-t border-[var(--line)] pt-8 text-xl leading-relaxed">
-          This is an ongoing crowdsourced project to document how states and
-          counties explain the SNAP interview requirement to applicants on
-          their websites.
-        </p>
+        <div className="mt-10 grid gap-8 border-t border-[var(--line)] pt-8 md:grid-cols-2">
+          <p className="text-xl leading-relaxed">
+            The SNAP interview requirement is often one of the most critical
+            reasons applicants are procedurally denied benefits.
+          </p>
+          <p className="leading-relaxed text-[var(--ink)]">
+            This is an ongoing crowdsourced project to document how states and
+            counties explain the SNAP interview requirement to applicants on
+            their websites.
+          </p>
+        </div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
           <iframe
             src="https://jaeyk.github.io/snap_interview_atlas/"
