@@ -216,7 +216,7 @@ const projects: Project[] = [
           rel="noreferrer"
           className="mt-6 inline-flex items-center gap-3 border-b border-[var(--ink)] pb-1 text-sm font-bold uppercase tracking-[0.14em]"
         >
-          Open the map in a new tab
+          Open the atlas in a new tab
           <ArrowIcon />
         </a>
       </>
